@@ -64,11 +64,17 @@ if (-not $found) {
 }
 
 # 下载文件
-Write-Host "正在尝试下载..."
-$filename = "winrar-x64-${version_nodot}-sc.exe"
+# 获取当前用户桌面路径
+$desktopPath = [Environment]::GetFolderPath("Desktop")
+
+# 构造完整文件路径
+$filename = Join-Path $desktopPath "winrar-x64-${version_nodot}-sc.exe"
+
+# 下载文件到桌面
+Write-Host "🧪 正在下载到桌面..."
 try {
     Invoke-WebRequest -Uri $url -OutFile $filename -UseBasicParsing
-    Write-Host "下载完成"
+    Write-Host "✔️ 下载完成，文件位置: $filename"
 } catch {
-    Write-Host "下载失败"
+    Write-Host "❌ 下载失败"
 }
