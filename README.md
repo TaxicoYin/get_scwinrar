@@ -1,0 +1,2 @@
+# get_scwinrar
+全自动获取简体中文无广告版winrar暗链和商业版
