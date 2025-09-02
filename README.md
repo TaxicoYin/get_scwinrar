@@ -6,3 +6,7 @@ win环境下有魔法的用户可直接一条命令获取
 ```
 irm https://raw.githubusercontent.com/TaxicoYin/get_scwinrar/refs/heads/main/getscwinrar.ps1 | iex
 ```
+没魔法的用这条命令
+```
+irm https://gitee.com/jevera/get_scwinrar/raw/main/getscwinrar.ps1 | iex
+```
