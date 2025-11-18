@@ -1,15 +1,11 @@
-﻿# 设置目标页面
 $URL = "https://www.win-rar.com/singlenewsview.html?&L=0"
 
-# 获取页面内容
 $HTML = Invoke-WebRequest -Uri $URL -UseBasicParsing
 $Content = $HTML.Content
 
-# 提取版本号（如 WinRAR 7.13）
 $versionLine = ($Content -split "`n" | Select-String -Pattern 'WinRAR\s+\d+(\.\d+)+') | Select-Object -First 1
 $version = $versionLine.Matches.Value -replace 'WinRAR\s+', ''
 
-# 提取发布日期（如 30.07.2025 → 2025-07-30）
 $rawDate = [regex]::Match(
     $Content,
     'class="[^"]*\bnews-single-timedata\b[^"]*"[^>]*>.*?(\d{2}\.\d{2}\.\d{4})',
@@ -28,16 +24,13 @@ try {
     exit 1
 }
 
-# 输出结果
 Write-Host "发布日期: $releaseDate"
 Write-Host "最新版本号: $version"
 
-# 构造下载地址（合作伙伴版）
 $version_nodot = $version -replace '\.', ''
 $download_url = "https://www.win-rar.com/fileadmin/winrar-versions/partners/hua/winrar-x64-${version_nodot}sc.exe"
 Write-Host "下载地址: $download_url"
 
-# 暗链尝试逻辑
 Write-Host "正在尝试构造并验证 WinRAR 简体中文下载暗链..."
 
 $startDate = [datetime]::ParseExact($releaseDate, 'yyyy-MM-dd', $null)
@@ -54,7 +47,6 @@ for ($i = 0; $i -lt $maxDays; $i++) {
         $found = $true
         break
     } catch {
-        # 链接不存在，继续尝试
     }
 }
 
@@ -63,14 +55,10 @@ if (-not $found) {
     exit 1
 }
 
-# 下载文件
-# 获取当前用户桌面路径
 $desktopPath = [Environment]::GetFolderPath("Desktop")
 
-# 构造完整文件路径
 $filename = Join-Path $desktopPath "winrar-x64-${version_nodot}-sc.exe"
 
-# 下载文件到桌面
 Write-Host "正在下载到桌面..."
 try {
     Invoke-WebRequest -Uri $url -OutFile $filename -UseBasicParsing
@@ -78,4 +66,5 @@ try {
 } catch {
     Write-Host "下载失败"
 }
+
 
