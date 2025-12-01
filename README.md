@@ -3,7 +3,7 @@
 shell脚本获取 python脚本获取 powershell 脚本获取任君选择    
 powershell用户可能需要先打开开发者模式并允许运行ps1脚本    
 ### win环境下   
-有魔法的用户可直接一条命令获取    
+有魔法的用户    
 ```
 irm https://raw.githubusercontent.com/TaxicoYin/get_scwinrar/refs/heads/main/getscwinrar.ps1 | iex
 ```
@@ -12,7 +12,7 @@ irm https://raw.githubusercontent.com/TaxicoYin/get_scwinrar/refs/heads/main/get
 irm https://gitee.com/jevera/get_scwinrar/raw/main/getscwinrar.ps1 | iex
 ```
 ### shell环境下   
-有魔法的用户可直接一条命令获取      
+有魔法的用户    
 ```
  curl -s https://raw.githubusercontent.com/TaxicoYin/get_scwinrar/refs/heads/main/getscwinrar.sh | sh
 ```
