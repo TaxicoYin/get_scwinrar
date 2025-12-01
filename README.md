@@ -18,5 +18,5 @@ irm https://gitee.com/jevera/get_scwinrar/raw/main/getscwinrar.ps1 | iex
 ```
 没魔法的用这条命令
 ```
-irm https://gitee.com/jevera/get_scwinrar/raw/main/getscwinrar.sh | sh
+curl -s https://gitee.com/jevera/get_scwinrar/raw/main/getscwinrar.sh | sh
 ```
