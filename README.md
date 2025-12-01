@@ -14,7 +14,7 @@ irm https://gitee.com/jevera/get_scwinrar/raw/main/getscwinrar.ps1 | iex
 ### shell环境下   
 有魔法的用户    
 ```
- curl -s https://raw.githubusercontent.com/TaxicoYin/get_scwinrar/refs/heads/main/getscwinrar.sh | sh
+curl -s https://raw.githubusercontent.com/TaxicoYin/get_scwinrar/refs/heads/main/getscwinrar.sh | sh
 ```
 没魔法的用这条命令
 ```
