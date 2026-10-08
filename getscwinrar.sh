@@ -103,7 +103,7 @@ echo "🔍 正在尝试构造并验证 WinRAR 简体中文下载暗链..."
 echo ""
 
 
-for i in $(seq 0 59); do
+for i in $(seq 0 29); do
 
     test_date=$(date -d "$release_date -$i day" +%Y%m%d)
 
@@ -140,7 +140,7 @@ if [[ -z "$found_url" ]]; then
 
     echo ""
     echo "========================================"
-    echo "❌ 过去 60 天内没有找到简体中文暗链"
+    echo "❌ 过去 30 天内没有找到简体中文暗链"
     echo "========================================"
     echo ""
 
