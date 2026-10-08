@@ -153,7 +153,7 @@ $startDate = [datetime]::ParseExact(
     $null
 )
 
-$maxDays = 60
+$maxDays = 30
 
 $found = $false
 $url = ""
