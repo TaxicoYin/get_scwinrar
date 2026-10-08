@@ -169,7 +169,7 @@ print("🔍 正在尝试构造并验证 WinRAR 简体中文下载暗链...")
 print("")
 
 
-for i in range(60):
+for i in range(30):
 
     test_date = base_date - timedelta(days=i)
 
@@ -221,7 +221,7 @@ if not found_url:
 
     print("")
     print("========================================")
-    print("❌ 过去 60 天内没有找到简体中文暗链")
+    print("❌ 过去 30 天内没有找到简体中文暗链")
     print("========================================")
     print("")
 
