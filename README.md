@@ -1,4 +1,5 @@
-# get_scwinrar
+# 7.13过后无暗链，所以现在检查暗链失败会提示下载商业中文试用版（激活后无区别只是发行渠道不同）
+## get_scwinrar
 一条命令全自动下载简体中文无广告版winrar暗链和商业版    
 shell脚本获取 python脚本获取 powershell 脚本获取任君选择    
 powershell用户可能需要先打开开发者模式并允许运行ps1脚本    
